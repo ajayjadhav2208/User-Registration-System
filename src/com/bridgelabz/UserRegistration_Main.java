@@ -2,7 +2,7 @@ package com.bridgelabz;
 
 import java.util.Scanner;
 /**
- * Purpose  -  Should have atleast 1 Special Character in the password
+ * Purpose  -  Check Entered Email Validation
  * @author  - Ajay Jadhav
  * @version - 16.0
  * @since   - 2021-10-25
@@ -61,3 +61,4 @@ import java.util.Scanner;
             }
         }
     }
+
