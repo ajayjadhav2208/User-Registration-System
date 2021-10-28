@@ -2,7 +2,7 @@ package com.bridgelabz;
 
 import java.util.Scanner;
 /**
- * Purpose  - As a User need to enter a valid First Name
+ * Purpose  -  Should have atleast 1 Special Character in the password
  * @author  - Ajay Jadhav
  * @version - 16.0
  * @since   - 2021-10-25
@@ -25,6 +25,7 @@ public class UserRegistration_Main {
         System.out.println("Enter 5 : to validate Password Rule 1 ");
         System.out.println("Enter 6 : to validate Password Rule 2 ");
         System.out.println("Enter 7 : to validate Password Rule 3 ");
+        System.out.println("Enter 8 : to validate Password Rule 4 ");
 
         switch (scanner.nextInt()) {
             case 1:
@@ -47,6 +48,9 @@ public class UserRegistration_Main {
             case 7:
                  UserRegistration.validPassRule3();
                  break;
+            case 8:
+                UserRegistration.validPassRule4();
+                break;
             default:
                 System.out.println("Select a valid number");
         }

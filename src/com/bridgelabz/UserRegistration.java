@@ -4,13 +4,15 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
- * Purpose  - As a User need to enter a valid First Name
+ * Purpose  - Should have atleast one spcial character in the password
  */
 
 public class UserRegistration {
     public static final Scanner scanner = new Scanner(System.in);
-
-    public static void validFirstName() {
+    /*
+    Created a method to validate first name
+     */
+    public static void validFirstName(){
         System.out.print("Enter the First Name : ");
         String name = scanner.next();
         String regex = "^[A-Z]{1}[a-z]{2,}$";
@@ -19,34 +21,30 @@ public class UserRegistration {
         boolean r = m.matches();
         if (r)
             System.out.println("First name is valid");
-        else {
+        else
             System.out.println("First name is !Invalid");
-        }
     }
-
     /*
-       Created a method to validate last name
-        */
-    public static void validLastName() {
-        System.out.println("Enter the Last Name");
-        String name = scanner.next();
+    Created a method to validate last name
+     */
+    public static void validLastName(){
+        System.out.print("Enter the Last Name : ");
+        String lname = scanner.next();
 
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
 
         Pattern p1 = Pattern.compile(regex1);
-        Matcher m1 = p1.matcher(name);
+        Matcher m1 = p1.matcher(lname);
         boolean r1 = m1.matches();
         if (r1)
             System.out.println("Last name is Valid");
-        else {
+        else
             System.out.println("Last name is Invalid");
-        }
     }
-
     /*
-       Created a method to validate Email Address
-        */
-    public static void validEmailId() {
+    Created a method to validate Email Address
+     */
+    public static void validEmailId(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the Email Address : ");
         String email = scanner.next();
@@ -56,15 +54,13 @@ public class UserRegistration {
         boolean r2 = m2.matches();
         if (r2)
             System.out.println("Email Address is Valid");
-        else {
+        else
             System.out.println("Email Address is Invalid");
-        }
     }
-
     /*
-     Created a method to validate Mobile Number
+     Created a method to enter a valid mobile number
      */
-    public static void validMobileNumber() {
+    public static void validMobileNumber(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your mobile number : ");
         String phoneNo = scanner.nextLine();
@@ -74,15 +70,14 @@ public class UserRegistration {
         boolean r3 = m3.matches();
         if (r3)
             System.out.println("Phone number is Valid");
-        else {
+        else
             System.out.println("Phone number is Invalid");
-        }
     }
-
     /*
-     User need to enter a valid Password according to rule 1
+     Created a method to enter valid Password according to rule 1
+     It should have minimum 8 characters
      */
-    public static void validPassRule1() {
+    public static void validPassRule1(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the Password according to rule 1 : ");
         String passWord = scanner.nextLine();
@@ -94,13 +89,12 @@ public class UserRegistration {
             System.out.println("Password is Valid");
         else
             System.out.println("Password is Invalid");
-
     }
-
     /*
-     Created a method to enter valid Password according to rule 2
-     */
-    public static void validPassRule2() {
+    Created a method to enter valid Password according to rule 2
+    It should have atleast one Upper Case
+    */
+    public static void validPassRule2(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the Password according to rule 2 : ");
         String passWord1 = scanner.nextLine();
@@ -114,26 +108,37 @@ public class UserRegistration {
             System.out.println("Password is Invalid");
     }
     /*
-     //   Created a method to enter valid Password according to rule 3
-*/
-        public static void validPassRule3(){
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter the PassWord");
-            String passWord2 = scanner.nextLine();
-            String regex6 = "^[A-Z]{1}+[a-zA-Z].+[0-9].{8,}$";
-            Pattern p6 = Pattern.compile(regex6);
-            Matcher m6 = p6.matcher(passWord2);
-            boolean r6 = m6.matches();
-            if (r6)
-                System.out.println("Password is Valid");
-            else
-                System.out.println("Password is Invalid");
-        }
+     Created a method to enter valid Password according to rule 3
+     It should have atleast one number in the password
+     */
+    public static void validPassRule3(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the PassWord");
+        String passWord2 = scanner.nextLine();
+        String regex6 = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9]).{8,}$";
+        Pattern p6 = Pattern.compile(regex6);
+        Matcher m6 = p6.matcher(passWord2);
+        boolean r6 = m6.matches();
+        if (r6)
+            System.out.println("Password is Valid");
+        else
+            System.out.println("Password is Invalid");
     }
-
-
-
-
-
-
-
+    /*
+     Created a method to enter valid Password according to rule 4
+     It should have atleast one special character
+     */
+    public static void validPassRule4(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the PassWord : ");
+        String passWord2 = scanner.next();
+        String regex6 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
+        Pattern p6 = Pattern.compile(regex6);
+        Matcher m6 = p6.matcher(passWord2);
+        boolean r6 = m6.matches();
+        if (r6)
+            System.out.println("Password is Valid");
+        else
+            System.out.println("Password is Invalid");
+    }
+}
