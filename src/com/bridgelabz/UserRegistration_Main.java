@@ -23,13 +23,13 @@ public class UserRegistration_Main {
         System.out.println("Enter 3 : to validate E-mail Address ");
         System.out.println("Enter 4 : to validate Mobile Number ");
         System.out.println("Enter 5 : to validate Password Rule 1 ");
+        System.out.println("Enter 6 : to validate Password Rule 2 ");
         switch (scanner.nextInt()) {
             case 1:
                 UserRegistration.validFirstName();
                 break;
             case 2:
                 UserRegistration.validLastName();
-                System.out.println("Select a valid number");
             case 3:
                 UserRegistration.validEmailId();
                 break;
@@ -39,11 +39,11 @@ public class UserRegistration_Main {
             case 5:
                 UserRegistration.validPassRule1();
                 break;
+            case 6:
+                UserRegistration.validPassRule2();
+                break;
             default:
                 System.out.println("Select a valid number");
         }
     }
 }
-
-
-
